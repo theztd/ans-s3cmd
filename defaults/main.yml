@@ -1,0 +1,7 @@
+---
+# s3_access_key: CHANGE_ME
+# s3_secret_key: CHANGE_ME
+# s3cmd_conf:
+#   verbosity = WARNING
+#   bucket_location: eu-central-1
+#   default_mime_type: binary/octet-stream

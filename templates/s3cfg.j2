@@ -1,0 +1,8 @@
+[default]
+access_key = {{ s3_access_key }}
+secret_key = {{ s3_secret_key }}
+{% if s3cfg_conf is defined %}
+{% for key, val in s3cfg_conf.iteritems() %}
+{{ key }} = {{ val }}
+{% endfor %}
+{% endif %}

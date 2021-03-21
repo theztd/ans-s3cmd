@@ -1,0 +1,21 @@
+---
+- name: Ensure pip3 has been installed
+  apt:
+    name: python3-pip
+    state: present
+
+- name: "S3cmd - Install package"
+  pip:
+    name: s3cmd
+    state: present
+
+- name: "S3cmd - Consigure credentials"
+  template:
+    src: s3cfg.j2
+    dest: "/root/.s3cfg"
+    mode: 0600
+    backup: yes
+  when:
+  - s3cmd_access_key is defined
+  - s3cmd_secret_key is defined
+
