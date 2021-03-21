@@ -1,7 +1,27 @@
 s3cmd role
 ==========
 
-Install and configure s3cmd for root user
+Install and configure s3cmd for root user. And tool s3-restore which is great for in point of time restores. 
+
+
+Restore example
+---------------
+
+```bash
+# requires configuration in ~/.aws, to do it please run aws configure
+s3-restore -b backup-bucket/directory -d /home/local_restore_path -t "11-21-2018 14:06:00 +1"
+```
+
+Backup example
+--------------
+
+```bash
+crontab -e
+
+05 * * * * /bin/bash -lc "s3cmd sync /home/ s3://backups-devel/node_name/home/" 2>&1
+
+```
+
 
 AWS S3 confiuration
 -------------------

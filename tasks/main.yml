@@ -4,9 +4,11 @@
     name: python3-pip
     state: present
 
-- name: "S3cmd - Install package"
+- name: "Install s3 manipulation packages"
   pip:
-    name: s3cmd
+    name:
+    - s3cmd
+    - s3-restore
     state: present
 
 - name: "S3cmd - Consigure credentials"
